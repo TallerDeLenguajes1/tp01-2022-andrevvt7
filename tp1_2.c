@@ -36,6 +36,8 @@ void invertir(int *a, int *b){
     aux = *a;
     *a = *b;
     *b = aux;
+
+    printf("Valor de a: %d\nValor de b: %d\n", *a, *b);
 }
 
 void orden(int *a, int *b);
@@ -43,6 +45,11 @@ void orden(int *a, int *b){
     int aux;
     if(*a > *b){
         invertir(a, b);
+    }
+    if (*a == *b){
+        printf("Los n%cmeros son iguales\n", 163);
+    } else {
+        printf("Valor menor: %d\nValor mayor: %d", *a, *b);
     }
 }
 
@@ -71,7 +78,6 @@ int main(){
     scanf("%d", &b);
     fflush(stdin);
     invertir(&a, &b);
-    printf("Valor de a: %d\nValor de b: %d\n", a, b);
 
     printf("\nOrdenar de menor a mayor dos n%cmeros\n", 163);
     printf("Ingrese los valores de c y d\n");
@@ -82,11 +88,6 @@ int main(){
     scanf("%d", &d);
     fflush(stdin);
     orden(&c, &d);
-    if (c == d){
-        printf("Los n%cmeros son iguales\n", 163);
-    } else {
-        printf("Valor menor: %d\nValor mayor: %d", c, d);
-    }
-
+    
     return 0;
 }
