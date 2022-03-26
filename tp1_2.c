@@ -2,45 +2,69 @@
 #include <math.h>
 
 int cuadradoA(int num);
+void cuadradoB(int num);
+void variableC();
+void invertir(int *a, int *b);
+void orden(int *a, int *b);
+
+int main(){
+    int num = 4, cuadrado, a, b;
+    
+    cuadrado = cuadradoA(num);
+    printf("El cuadrado de %d es: %d\n\n", num, cuadrado);
+
+    cuadradoB(num);
+    variableC();
+
+    printf("Invertir los valores entre dos n%cmeros\n", 163);
+    printf("Ingrese los valores de a y b\n");
+    printf("a = ");
+    scanf("%d", &a);
+    fflush(stdin);
+    printf("b = ");
+    scanf("%d", &b);
+    fflush(stdin);
+    invertir(&a, &b);
+    printf("Nuevo valor de a: %d\nNuevo valor de b: %d\n", a, b);
+
+    printf("\nOrdenar de menor a mayor los n%cmeros a y b\n", 163);
+    orden(&a, &b);
+  
+    return 0;
+}
+
 int cuadradoA(int num){
     int cuadrado;
+    printf("Calcular el cuadrado de %d\n", num);
     cuadrado = pow(num, 2);
 
     return cuadrado;
 }
 
-void cuadradoB();
-void cuadradoB(){
-    int num2, cuadrado;
+void cuadradoB(int num){
+    int cuadrado;
+    printf("Calcular el cuadrado de %d con funci%cn void\n", num, 162);
+    cuadrado = pow(num, 2);
 
-    printf("Ingrese un n%cmero: ", 163);
-    scanf("%d", &num2);
-    cuadrado = pow(num2, 2);
-
-    printf("El cuadrado de %d es: %d\n", num2, cuadrado);
+    printf("El cuadrado de %d es: %d\n", num, cuadrado);
 }
 
-void variableC();
 void variableC(){
     int num;
-
+    printf("\nMostrar direcci%cn y contenido de una variable", 162);
     printf("\nIngrese un n%cmero: ", 163);
     scanf("%d", &num);
 
     printf("Direcci%cn de la variable: %p\nContenido de la variable: %d\n\n", 162, &num, num);
 }
 
-void invertir(int *a, int *b);
 void invertir(int *a, int *b){
     int aux;
     aux = *a;
     *a = *b;
     *b = aux;
-
-    printf("Valor de a: %d\nValor de b: %d\n", *a, *b);
 }
 
-void orden(int *a, int *b);
 void orden(int *a, int *b){
     int aux;
     if(*a > *b){
@@ -51,43 +75,4 @@ void orden(int *a, int *b){
     } else {
         printf("Valor menor: %d\nValor mayor: %d", *a, *b);
     }
-}
-
-int main(){
-    int num, cuadrado, a, b, c, d;
-    
-    printf("Calcular el cuadrado de un n%cmero con funci%cn que devuelve int\n", 163, 162);
-    printf("Ingrese un n%cmero: ", 163);
-    scanf("%d", &num);
-    fflush(stdin);
-    cuadrado = cuadradoA(num);
-    printf("El cuadrado de %d es: %d\n\n", num, cuadrado);
-
-    printf("Calcular el cuadrado de un n%cmero con funci%cn void\n", 163, 162);
-    cuadradoB();
-
-    printf("\nMostrar direcci%cn y contenido de una variable\n", 162);
-    variableC();
-
-    printf("Invertir el orden de dos n%cmeros\n", 163);
-    printf("Ingrese los valores de a y b\n");
-    printf("a = ");
-    scanf("%d", &a);
-    fflush(stdin);
-    printf("b = ");
-    scanf("%d", &b);
-    fflush(stdin);
-    invertir(&a, &b);
-
-    printf("\nOrdenar de menor a mayor dos n%cmeros\n", 163);
-    printf("Ingrese los valores de c y d\n");
-    printf("c = ");
-    scanf("%d", &c);
-    fflush(stdin);
-    printf("d = ");
-    scanf("%d", &d);
-    fflush(stdin);
-    orden(&c, &d);
-    
-    return 0;
 }
